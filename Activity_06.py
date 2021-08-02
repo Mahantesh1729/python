@@ -1,6 +1,5 @@
 print("Enter any five numbers: ", end="")
-lis = input()
-lis = lis.split(" ")
+lis = input().split(" ")
 lis = list(map(int, lis))
 sli = lis[0: 3]
 
