@@ -1,5 +1,6 @@
 a = input("First string: ")
 b = input("Second string: ")
 
-print("+ for concatenation")
+print("= assignment operator")
+c = a+b
 print(f"{a} + {b} = " + (a + b))
