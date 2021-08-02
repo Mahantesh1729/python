@@ -1,4 +1,4 @@
 print("Program to find sum of two numbers")
-a = int(input("a = "))
-b = int(input("b = "))
+a = int(input("Enter the first number = "))
+b = int(input("Enter the second number = "))
 print(f"{a} + {b} = ",(a+b))
