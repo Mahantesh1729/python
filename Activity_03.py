@@ -1,6 +1,6 @@
 a = input("First string: ")
-b = input("Second string: ")
+b = int(input("number of times to be printed: "))
 
-print("= assignment operator")
-c = a+b
-print(f"{a} + {b} = " + (a + b))
+print("* repetition operator")
+
+print(f"{a} * {b} = " + a*b)
