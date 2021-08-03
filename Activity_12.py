@@ -1,12 +1,22 @@
-print("Enter any three numbers")
-lis = list(map(int, input().split(" ")))
-a, b, c = lis
+def main():
+    print("Enter any three numbers")    
+    lis = input_list()
+    a, b, c = lis
+    largest = largest_number(a, b, c)
+    display(largest, a, b, c)
 
-if a > b and a > c:
-    print(f"{a} is the greatest number among {a}, {b}, {c}")
-elif b > c:
-    print(f"{b} is the greatest number among {a}, {b}, {c}")
-else:
-    print(f"{c} is the greatest number among {a}, {b}, {c}")    
-
+def input_list():
+    return list(map(int, input().split(" ")))
     
+def largest_number(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > c:
+        return b
+    else:
+        return c    
+
+def display(largest, a, b, c):
+    print(f"{largest} is the greatest number among {a}, {b}, {c}")
+
+main()
