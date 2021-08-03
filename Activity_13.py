@@ -1,3 +1,4 @@
+from math import sqrt
 def main():
     print("Enter any number: ", end = "")
     a = input_number()
@@ -9,7 +10,7 @@ def input_number():
 def isprime(a):
     if a == 1:
         return False
-    for i in range(2,a // 2,1):
+    for i in range(2, round(sqrt(a)) + 1,1):
         if a%i == 0:
             return False
     return True
