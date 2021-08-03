@@ -8,9 +8,7 @@ def input_list():
     return input().split(";")
 
 def convert(lis1):
-    lis2 = []
-    for i in range(len(lis1)):
-        lis2.append(tuple(lis1[i].split("=")))
+    lis2 = [tuple(x.split("=")) for x in lis1]
     return lis2
 
 def display(lis2):
