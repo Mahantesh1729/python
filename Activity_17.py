@@ -1,4 +1,3 @@
-
 def main():
     print("Enter some strings")
     lis1 = input_list()
@@ -13,17 +12,15 @@ def input_list():
     return input().split(";")
 
 def convert(lis1):
-    lis2 = []
-    for i in range(len(lis1)):
-        lis2.append(tuple(lis1[i].split("=")))
+    lis2 = [tuple(x.split("=")) for x in lis1]
     return lis2
 
-def display(lis2):
-    print(lis2)
+def display(lis):
+    print(lis)
 
 def convertback(lis):
     s = ""
-    for i in range(len(lis) - 1):
+    for i in range(3):
         s += lis[i][0] + "=" + lis[i][1]
         s += ';'
     i += 1
