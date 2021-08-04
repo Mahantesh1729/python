@@ -20,7 +20,7 @@ def display(lis):
 
 def convertback(lis):
     s = ""
-    for i in range(3):
+    for i in range(len(lis) - 1):
         s += lis[i][0] + "=" + lis[i][1]
         s += ';'
     i += 1
