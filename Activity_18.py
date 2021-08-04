@@ -2,16 +2,7 @@ import re
 def main():
     print("Enter some strings: ")
     s = string_input()
-    lis = []
-    k = ""
-    for i in s:
-        if i == '=' or i == ';':
-            lis.append(k)
-            k = ""
-        else:
-            k += i
-    lis.append(k)
-    dis = make_dict(lis)
+    dis = make_dict(s)
     print("Dictionary created")
     display(dis)
     print("Converted back to string")
@@ -20,14 +11,9 @@ def main():
 def string_input():
     return input()
 def make_dict(s):
-    keys = []
-    values = []
-    for i in range(len(s)):
-        if(i % 2 == 0):
-            keys.append(s[i])
-        else:
-            values.append(s[i])
-
+    lis = s.split(";")
+    keys = [i.split("=")[0] for i in lis]
+    values = [i.split("=")[1] for i in lis]
     dis = { k:v for (k, v) in zip(keys, values)}
     return dis
 
