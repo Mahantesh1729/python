@@ -1,4 +1,4 @@
-import re
+
 def main():
     print("Enter some strings: ")
     s = string_input()
