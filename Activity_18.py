@@ -10,6 +10,7 @@ def main():
             k = ""
         else:
             k += i
+    lis.append(k)
     dis = make_dict(lis)
     print("Dictionary created")
     display(dis)
