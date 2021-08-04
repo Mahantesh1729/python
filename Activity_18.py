@@ -12,8 +12,10 @@ def string_input():
     return input()
 def make_dict(s):
     lis = s.split(";")
-     
-    dis = { k:v for (k, v) in zip([i.split("=")[0] for i in lis], [i.split("=")[1] for i in lis])}
+    keys = [i.split("=")[0] for i in lis]
+    values = [i.split("=")[1] for i in lis]
+    dis = {}
+    dis = {keys[i]: values[i] for i in range(len(keys))}
     return dis
 
 def revert(dis):
