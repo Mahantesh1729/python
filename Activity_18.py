@@ -1,4 +1,4 @@
-
+import re
 def main():
     print("Enter some strings: ")
     s = string_input()
@@ -12,9 +12,8 @@ def string_input():
     return input()
 def make_dict(s):
     lis = s.split(";")
-    keys = [i.split("=")[0] for i in lis]
-    values = [i.split("=")[1] for i in lis]
-    dis = { k:v for (k, v) in zip(keys, values)}
+     
+    dis = { k:v for (k, v) in zip([i.split("=")[0] for i in lis], [i.split("=")[1] for i in lis])}
     return dis
 
 def revert(dis):
