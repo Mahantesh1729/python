@@ -1,29 +1,39 @@
-
+import re
 def main():
-    print("Enter some strings")
-    lis1 = input_list()
-    lis2 = convert(lis1)
-    Dict = dict(lis2)
-    print("Displaying dictionary")
-    display(Dict)
-    print("Displaying original string after conversion from dict")
-    string = convert_to_string(Dict)
-    display(string)
-def input_list():
-    return input().split(";")
+    print("Enter some strings: ")
+    s = string_input()
+    s = re.split(';|=', s)
+    dis = make_dict(s)
+    print("Dictionary created")
+    display(dis)
+    print("Converted back to string")
+    s = revert(dis)
+    display(s)
+    
+def string_input():
+    return input()
 
-def convert(lis1):
-    lis2 = [tuple(x.split("=")) for x in lis1]
-    return lis2
+def make_dict(s):
+    keys = []
+    values = []
+    for i in range(len(s)):
+        if(i % 2 == 0):
+            keys.append(s[i])
+        else:
+            values.append(s[i])
 
-def convert_to_string(Dict):
+    dis = { k:v for (k, v) in zip(keys, values)}
+    return dis
+
+def revert(dis):
     s = ""
-    for i in Dict:
-        s += i + "=" + Dict[i] + ";"
+    for i in dis:
+        s += i + "="+dis[i]+ ";"
     s = s[:-1]
     return s
 
-def display(s):
-    print(s)
+def display(dis):
+    print(dis)
+        
 
 main()
