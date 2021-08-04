@@ -10,12 +10,8 @@ def main():
     display(s)
 def string_input():
     return input()
-def make_dict(s):
-    lis = s.split(";")
-    keys = [i.split("=")[0] for i in lis]
-    values = [i.split("=")[1] for i in lis]
-    dis = {}
-    dis = {keys[i]: values[i] for i in range(len(keys))}
+def make_dict(lis):
+    dis = {k:v for k, v in (a.split('=')for a in lis.split(';'))}
     return dis
 
 def revert(dis):
