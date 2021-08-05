@@ -19,7 +19,7 @@ def create_dict(n):
     return dis
 
 def sort_dictionary(dis):
-    return sorted(dis.items())
+    return dict(sorted(dis.items()))
     #print(sorted(dis))
    # return {i: dis[i] for i in sorted(dis)}
     
