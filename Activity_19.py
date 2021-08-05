@@ -19,7 +19,9 @@ def create_dict(n):
     return dis
 
 def sort_dictionary(dis):
-    return {i: dis[i] for i in sorted(dis)}
+    return sorted(dis.items())
+    #print(sorted(dis))
+   # return {i: dis[i] for i in sorted(dis)}
     
 def display(s):
     print(s)
