@@ -18,7 +18,11 @@ def create_dictionary(n):
     return dis
 
 def sort_by_value(dis):
-    return {k: v for v, k in sorted({v: k for k, v in dis.items()}.items())}
+    return {k: dis[k] for k in sorted(dis, key = dis.get)}
+
+def values(dis):
+    r
+   # return {k: v for v, k in sorted({v: k for k, v in dis.items()}.items())}
 #lis = list(dis.items())
     #n = len(dis)
     #for i in range(n - 1):
