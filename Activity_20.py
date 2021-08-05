@@ -18,15 +18,16 @@ def create_dictionary(n):
     return dis
 
 def sort_by_value(dis):
-    lis = list(dis.items())
-    n = len(dis)
-    for i in range(n - 1):
-        for j in range(i + 1, n):
-            if lis[i][1] > lis[j][1]:
-                k = lis[i]
-                lis[i] = lis[j]
-                lis[j] = k
-    return dict(lis)
+    return {k: v for v, k in sorted({v: k for k, v in dis.items()}.items())}
+#lis = list(dis.items())
+    #n = len(dis)
+    #for i in range(n - 1):
+        #for j in range(i + 1, n):
+        #    if lis[i][1] > lis[j][1]:
+       #         k = lis[i]
+      #          lis[i] = lis[j]
+     #           lis[j] = k
+    #return dict(lis)
 
 def display(s):
     print(s)
