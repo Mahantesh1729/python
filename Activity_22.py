@@ -16,17 +16,19 @@ def convert_to_radians(n):
 
 def sine(n):
     ans = 0
+    fact = 1
     k = 0
     for i in range(1, 12, 2):
-        ans += (((-1)**(k%2))*(n**i)) / fact(i)
+        ans += (((-1)**(k%2))*(n**i)) / (fact * i)
+        fact *= i * (i + 1)
         k += 1
     return ans
 
-def fact(i):
-    if i == 1:
-        return 1
-    else:
-        return i * fact(i - 1)
+# def fact(i):
+#     if i == 1:
+#         return 1
+#     else:
+#         return i * fact(i - 1)
 
 def display(ans):
     print(ans)
